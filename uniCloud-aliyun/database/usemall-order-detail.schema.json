@@ -1,0 +1,144 @@
+{
+	"bsonType": "object",
+	"description": "订单明细表",
+	"permission": {
+		"read": true,
+		"create": true,
+		"update": "doc.create_uid == auth.uid",
+		"delete": "doc.create_uid == auth.uid",
+		"count": true
+	},
+	"required": ["order_id", "goods_id", "goods_num", "goods_price", "goods_market_price", "version", "is_delete",
+		"create_uid"
+	],
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID，系统自动生成"
+		},
+		"order_id": {
+			"bsonType": "string",
+			"description": "订单编号",
+			"foreignKey": "usemall-order.order_id"
+		},
+		"goods_id": {
+			"bsonType": "int",
+			"description": "水果ID",
+			"foreignKey": "usemall-goods._id"
+		},
+		"goods_name": {
+			"bsonType": "string",
+			"description": "水果名称",
+			"trim": "both"
+		},
+		"goods_name_pw": {
+			"bsonType": "string",
+			"description": "水果推广词",
+			"trim": "both"
+		},
+		"goods_img": {
+			"bsonType": "string",
+			"description": "水果图片",
+			"trim": "both"
+		},
+		"goods_num": {
+			"bsonType": "int",
+			"description": "水果数量"
+		},
+		"goods_price": {
+			"bsonType": "int",
+			"description": "水果价格单位分"
+		},
+		"goods_market_price": {
+			"bsonType": "int",
+			"description": "水果市场价单位分"
+		},
+		"goods_type": {
+			"bsonType": "string",
+			"description": "水果类型",
+			"trim": "both"
+		},
+		"goods_sku": {
+			"bsonType": "string",
+			"description": "水果SKU",
+			"trim": "both"
+		},
+		"goods_sku_name": {
+			"bsonType": "string",
+			"description": "",
+			"trim": "both"
+		},
+		"goods_sku_img": {
+			"bsonType": "string",
+			"description": "",
+			"trim": "both"
+		},
+		"goods_sku_id": {
+			"bsonType": "string",
+			"description": "水果sku_id"
+		},
+		"economize_amount": {
+			"bsonType": "int",
+			"description": "已省金额"
+		},
+		"is_vip": {
+			"bsonType": "string",
+			"description": "VIP水果"
+		},
+		"is_fxs": {
+			"bsonType": "string",
+			"description": "分销水果"
+		},
+		"rebate_ratio": {
+			"bsonType": "int",
+			"description": "返利比例"
+		},
+		"fxs_amount": {
+			"bsonType": "int",
+			"description": "返利金额"
+		},
+		"version": {
+			"bsonType": "int",
+			"description": "数据版本",
+			"defaultValue": 1
+		},
+		"is_delete": {
+			"bsonType": "int",
+			"description": "是否删除 0否 1已删除",
+			"defaultValue": 0
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		},
+		"create_uid": {
+			"bsonType": "string",
+			"description": "创建人ID",
+			"trim": "both",
+			"forceDefaultValue": {
+				"$env": "uid"
+			}
+		},
+		"create_uname": {
+			"bsonType": "string",
+			"description": "创建人",
+			"trim": "both"
+		},
+		"last_modify_time": {
+			"bsonType": "timestamp",
+			"description": "编辑时间"
+		},
+		"last_modify_uid": {
+			"bsonType": "string",
+			"description": "编辑人ID",
+			"trim": "both"
+		},
+		"last_modify_uname": {
+			"bsonType": "string",
+			"description": "编辑人",
+			"trim": "both"
+		}
+	}
+}

@@ -1,0 +1,80 @@
+{
+	"bsonType": "object",
+	"description": "应用导航分类参数设置表",
+	"permission": {
+		"read": true,
+		"create": false,
+		"update": false,
+		"delete": false,
+		"count": true
+	},
+	"required": ["version", "is_delete", "create_uid"],
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID，系统自动生成"
+		},
+		"classify_num": {
+			"bsonType": "int",
+			"description": "分类数量",
+			"trim": "both"
+		},
+		"version": {
+			"bsonType": "int",
+			"description": "数据版本",
+			"defaultValue": 1
+		},
+		"is_delete": {
+			"bsonType": "int",
+			"description": "是否删除 0否 1已删除",
+			"defaultValue": 0
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		},
+		"create_uid": {
+			"bsonType": "string",
+			"description": "创建人ID",
+			"trim": "both",
+			"forceDefaultValue": {
+				"$env": "uid"
+			}
+		},
+		"create_uname": {
+			"bsonType": "string",
+			"description": "创建人",
+			"trim": "both"
+		},
+		"last_modify_time": {
+			"bsonType": "timestamp",
+			"description": "编辑时间"
+		},
+		"last_modify_uid": {
+			"bsonType": "string",
+			"description": "编辑人ID",
+			"trim": "both"
+		},
+		"last_modify_uname": {
+			"bsonType": "string",
+			"description": "编辑人",
+			"trim": "both"
+		},
+		"delete_time": {
+			"bsonType": "timestamp",
+			"description": "删除时间"
+		},
+		"delete_uid": {
+			"bsonType": "string",
+			"description": "删除人ID",
+			"trim": "both"
+		},
+		"delete_uname": {
+			"bsonType": "string",
+			"description": "删除人",
+			"trim": "both"
+		}
+	}
+}

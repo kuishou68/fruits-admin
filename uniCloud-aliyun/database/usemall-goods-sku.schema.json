@@ -1,0 +1,189 @@
+{
+	"bsonType": "object",
+	"description": "水果SKU表",
+	"permission": {
+		"read": true,
+		"create": false,
+		"update": false,
+		"delete": false,
+		"count": true
+	},
+	"required": ["goods_id", "goods_sku", "price", "stock_num", "stock_wh_num", "limit", "state", "version",
+		"is_delete", "create_uid"
+	],
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID，系统自动生成"
+		},
+		"goods_id": {
+			"bsonType": "string",
+			"description": "水果ID"
+		},
+		"goods_sku": {
+			"bsonType": "string",
+			"description": "水果SKU",
+			"trim": "both"
+		},
+		"vip_price": {
+			"bsonType": "int",
+			"description": "VIP价，单位分"
+		},
+		"price": {
+			"bsonType": "int",
+			"description": "商城价，单位分"
+		},
+		"market_price": {
+			"bsonType": "int",
+			"description": "市场价，单位分"
+		},
+		"sale_cnt": {
+			"bsonType": "int",
+			"description": "已售量"
+		},
+		"stock_num": {
+			"bsonType": "int",
+			"description": "库存"
+		},
+		"stock_wh_num": {
+			"bsonType": "int",
+			"description": "入库库存"
+		},
+		"limit": {
+			"bsonType": "int",
+			"description": "限购量，0为不限购"
+		},
+		"sku1_name": {
+			"bsonType": "string",
+			"description": "sku1名称",
+			"trim": "both"
+		},
+		"sku1_spec": {
+			"bsonType": "string",
+			"description": "sku1规格",
+			"trim": "both"
+		},
+		"sku1_idx": {
+			"bsonType": "int",
+			"description": "sku1标识",
+			"trim": "both"
+		},
+		"sku2_name": {
+			"bsonType": "string",
+			"description": "sku2名称",
+			"trim": "both"
+		},
+		"sku2_spec": {
+			"bsonType": "string",
+			"description": "sku2规格",
+			"trim": "both"
+		},
+		"sku2_idx": {
+			"bsonType": "int",
+			"description": "sku2标识",
+			"trim": "both"
+		},
+		"sku3_name": {
+			"bsonType": "string",
+			"description": "sku3名称",
+			"trim": "both"
+		},
+		"sku3_spec": {
+			"bsonType": "string",
+			"description": "sku3规格",
+			"trim": "both"
+		},
+		"sku3_idx": {
+			"bsonType": "int",
+			"description": "sku3标识",
+			"trim": "both"
+		},
+		"sku4_name": {
+			"bsonType": "string",
+			"description": "sku4名称",
+			"trim": "both"
+		},
+		"sku4_spec": {
+			"bsonType": "string",
+			"description": "sku4规格",
+			"trim": "both"
+		},
+		"sku4_idx": {
+			"bsonType": "int",
+			"description": "sku4标识",
+			"trim": "both"
+		},
+		"img": {
+			"bsonType": "string",
+			"description": "图片",
+			"trim": "both"
+		},
+		"remark": {
+			"bsonType": "string",
+			"description": "备注",
+			"trim": "both"
+		},
+		"state": {
+			"bsonType": "string",
+			"description": "状态 待审核|销售中|已下架",
+			"trim": "both"
+		},
+		"version": {
+			"bsonType": "int",
+			"description": "数据版本",
+			"defaultValue": 1
+		},
+		"is_delete": {
+			"bsonType": "int",
+			"description": "是否删除 0否 1已删除",
+			"defaultValue": 0
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		},
+		"create_uid": {
+			"bsonType": "string",
+			"description": "创建人ID",
+			"trim": "both",
+			"forceDefaultValue": {
+				"$env": "uid"
+			}
+		},
+		"create_uname": {
+			"bsonType": "string",
+			"description": "创建人",
+			"trim": "both"
+		},
+		"last_modify_time": {
+			"bsonType": "timestamp",
+			"description": "编辑时间"
+		},
+		"last_modify_uid": {
+			"bsonType": "string",
+			"description": "编辑人ID",
+			"trim": "both"
+		},
+		"last_modify_uname": {
+			"bsonType": "string",
+			"description": "编辑人",
+			"trim": "both"
+		},
+		"delete_time": {
+			"bsonType": "timestamp",
+			"description": "删除时间"
+		},
+		"delete_uid": {
+			"bsonType": "string",
+			"description": "删除人ID",
+			"trim": "both"
+		},
+		"delete_uname": {
+			"bsonType": "string",
+			"description": "删除人",
+			"trim": "both"
+		}
+	}
+}

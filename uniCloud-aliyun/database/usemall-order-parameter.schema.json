@@ -1,0 +1,63 @@
+{
+	"bsonType": "object",
+	"description": "订单参数",
+	"permission": {
+		"read": true,
+		"create": false,
+		"update": false,
+		"delete": false,
+		"count": true
+	},
+	"required": ["version", "create_uid"],
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID，系统自动生成"
+		},
+		"overdue_minute_cancel_order": {
+			"bsonType": "int",
+			"description": "下单后超过多少分钟未付款自动取消订单"
+		},
+		"overdue_day_receiving": {
+			"bsonType": "int",
+			"description": "发货后，超过天，自动确认收货"
+		},
+		"overdue_day_stay_evaluated": {
+			"bsonType": "int",
+			"description": "收货后，超过天，更改为待评价"
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		},
+		"create_uid": {
+			"bsonType": "string",
+			"description": "创建人ID",
+			"trim": "both",
+			"forceDefaultValue": {
+				"$env": "uid"
+			}
+		},
+		"create_uname": {
+			"bsonType": "string",
+			"description": "创建人",
+			"trim": "both"
+		},
+		"last_modify_time": {
+			"bsonType": "timestamp",
+			"description": "编辑时间"
+		},
+		"last_modify_uid": {
+			"bsonType": "string",
+			"description": "编辑人ID",
+			"trim": "both"
+		},
+		"last_modify_uname": {
+			"bsonType": "string",
+			"description": "编辑人",
+			"trim": "both"
+		}
+	}
+}

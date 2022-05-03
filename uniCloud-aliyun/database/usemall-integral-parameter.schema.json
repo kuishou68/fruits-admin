@@ -1,0 +1,97 @@
+{
+	"bsonType": "object",
+	"description": "积分参数",
+	"permission": {
+		"read": true,
+		"create": false,
+		"update": false,
+		"delete": false,
+		"count": true
+	},
+	"required": ["version", "create_uid"],
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID，系统自动生成"
+		},
+		"register_gain_integral": {
+			"bsonType": "int",
+			"description": "注册会员可获多少积分"
+		},
+		"everyday_share_cnt": {
+			"bsonType": "int",
+			"description": "每天可分享多少次"
+		},
+		"share_once_gain_integral": {
+			"bsonType": "int",
+			"description": "分享一次获多少积分"
+		},
+		"everyday_sign_in_gain_integral": {
+			"bsonType": "int",
+			"description": "每天签到可获"
+		},
+		"continuous_sign_in_day": {
+			"bsonType": "int",
+			"description": "连续签到满多少天"
+		},
+		"extra_gift_integral": {
+			"bsonType": "int",
+			"description": "额外赠送多少积分"
+		},
+		"return_integral_ratio": {
+			"bsonType": "int",
+			"description": "下单返积分比例"
+		},
+		"one_money_deduction": {
+			"bsonType": "int",
+			"description": "1元抵多少积分"
+		},
+		"once_most_spendable_integral": {
+			"bsonType": "int",
+			"description": "一次最多可使用多少积分"
+		},
+		"yearly_integral_reset": {
+			"bsonType": "string",
+			"description": "状态 是|否",
+			"trim": "both"
+		},
+		"integral_desc": {
+			"bsonType": "string",
+			"description": "积分说明",
+			"trim": "both"
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		},
+		"create_uid": {
+			"bsonType": "string",
+			"description": "创建人ID",
+			"trim": "both",
+			"forceDefaultValue": {
+				"$env": "uid"
+			}
+		},
+		"create_uname": {
+			"bsonType": "string",
+			"description": "创建人",
+			"trim": "both"
+		},
+		"last_modify_time": {
+			"bsonType": "timestamp",
+			"description": "编辑时间"
+		},
+		"last_modify_uid": {
+			"bsonType": "string",
+			"description": "编辑人ID",
+			"trim": "both"
+		},
+		"last_modify_uname": {
+			"bsonType": "string",
+			"description": "编辑人",
+			"trim": "both"
+		}
+	}
+}

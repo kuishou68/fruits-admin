@@ -1,0 +1,297 @@
+{
+	"bsonType": "object",
+	"description": "会员表",
+	"permission": {
+		"read": true,
+		"create": false,
+		"update": false,
+		"delete": false,
+		"count": true
+	},
+	"required": ["member_guid", "member_coupon_cnt", "member_integral", "member_integral_use",
+		"member_integral_surplus", "member_integral_total", "member_login_cnt", "member_amount", "member_monetary",
+		"is_plus", "state", "version", "is_delete", "create_uid"
+	],
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID，系统自动生成"
+		},
+		"member_guid": {
+			"bsonType": "string",
+			"description": "会员GUID",
+			"trim": "both"
+		},
+		"member_name": {
+			"bsonType": "string",
+			"description": "姓名",
+			"trim": "both"
+		},
+		"member_name_py": {
+			"bsonType": "string",
+			"description": "简拼",
+			"trim": "both"
+		},
+		"member_password": {
+			"bsonType": "string",
+			"description": "密码",
+			"trim": "both"
+		},
+		"member_secret_key": {
+			"bsonType": "string",
+			"description": "密钥",
+			"trim": "both"
+		},
+		"member_access_token": {
+			"bsonType": "string",
+			"description": "令牌",
+			"trim": "both"
+		},
+		"member_session_key": {
+			"bsonType": "string",
+			"description": "",
+			"trim": "both"
+		},
+		"member_nickname": {
+			"bsonType": "string",
+			"description": "昵称",
+			"trim": "both"
+		},
+		"member_truename": {
+			"bsonType": "string",
+			"description": "真实姓名",
+			"trim": "both"
+		},
+		"member_mobile": {
+			"bsonType": "string",
+			"description": "手机号",
+			"trim": "both"
+		},
+		"member_gender": {
+			"bsonType": "string",
+			"description": "会员性别",
+			"trim": "both"
+		},
+		"member_email": {
+			"bsonType": "string",
+			"description": "会员 email",
+			"trim": "both"
+		},
+		"member_headimg": {
+			"bsonType": "string",
+			"description": "头像",
+			"trim": "both"
+		},
+		"member_weixin": {
+			"bsonType": "string",
+			"description": "会员微信",
+			"trim": "both"
+		},
+		"member_weixin_headimg": {
+			"bsonType": "string",
+			"description": "微信头像",
+			"trim": "both"
+		},
+		"member_city": {
+			"bsonType": "string",
+			"description": "所在城市",
+			"trim": "both"
+		},
+		"member_address": {
+			"bsonType": "string",
+			"description": "会员地址",
+			"trim": "both"
+		},
+		"member_uuid": {
+			"bsonType": "string",
+			"description": "UUID",
+			"trim": "both"
+		},
+		"member_openid": {
+			"bsonType": "string",
+			"description": "第三方openid",
+			"trim": "both"
+		},
+		"member_coupon_cnt": {
+			"bsonType": "int",
+			"description": "优惠券数量",
+			"defaultValue": 0
+		},
+		"member_integral": {
+			"bsonType": "int",
+			"description": "会员积分",
+			"defaultValue": 0
+		},
+		"member_integral_sign_cnt": {
+			"bsonType": "int",
+			"description": "累计签到",
+			"defaultValue": 0
+		},
+		"member_integral_use": {
+			"bsonType": "int",
+			"description": "已用积分",
+			"defaultValue": 0
+		},
+		"member_integral_surplus": {
+			"bsonType": "int",
+			"description": "剩余积分",
+			"defaultValue": 0
+		},
+		"member_integral_total": {
+			"bsonType": "int",
+			"description": "总获积分",
+			"defaultValue": 0
+		},
+		"member_login_cnt": {
+			"bsonType": "int",
+			"description": "登录次数",
+			"defaultValue": 0
+		},
+		"member_login_first_ip": {
+			"bsonType": "string",
+			"description": "首次登录IP",
+			"trim": "both"
+		},
+		"member_login_current_ip": {
+			"bsonType": "string",
+			"description": "当前登录IP",
+			"trim": "both"
+		},
+		"member_login_prev_ip": {
+			"bsonType": "string",
+			"description": "上一个登录IP",
+			"trim": "both"
+		},
+		"member_login_first_time": {
+			"bsonType": "timestamp",
+			"description": "首次登录时间"
+		},
+		"member_login_prev_time": {
+			"bsonType": "timestamp",
+			"description": "上一次登录时间"
+		},
+		"member_amount": {
+			"bsonType": "double",
+			"description": "充值金额",
+			"defaultValue": 0
+		},
+		"member_monetary": {
+			"bsonType": "double",
+			"description": "消费金额",
+			"defaultValue": 0
+		},
+		"member_economize": {
+			"bsonType": "double",
+			"description": "已省金额",
+			"defaultValue": 0
+		},
+		"is_plus": {
+			"bsonType": "string",
+			"description": "会员 plus",
+			"trim": "both"
+		},
+		"plus_time": {
+			"bsonType": "timestamp",
+			"description": "到期时间"
+		},
+		"myfxs_uid": {
+			"bsonType": "string",
+			"description": "我的上级"
+		},
+		"myfxs_time": {
+			"bsonType": "timestamp",
+			"description": "加入时间"
+		},
+		"myfxs_source": {
+			"bsonType": "string",
+			"description": "加入来源"
+		},
+		"myfxs_order_cnt": {
+			"bsonType": "string",
+			"description": "下单数"
+		},
+		"myfxs_profit_amount": {
+			"bsonType": "string",
+			"description": "累计收益"
+		},
+		"myfxs_profit_lopts": {
+			"bsonType": "object",
+			"description": "options"
+		},
+		"remark": {
+			"bsonType": "string",
+			"description": "备注",
+			"trim": "both"
+		},
+		"yy_mm": {
+			"bsonType": "string",
+			"description": "年月"
+		},
+		"yy_mm_dd": {
+			"bsonType": "string",
+			"description": "年月日"
+		},
+		"state": {
+			"bsonType": "string",
+			"description": "状态 待审核|已审核",
+			"trim": "both"
+		},
+		"version": {
+			"bsonType": "int",
+			"description": "数据版本",
+			"defaultValue": 1
+		},
+		"is_delete": {
+			"bsonType": "int",
+			"description": "是否删除 0否 1已删除",
+			"defaultValue": 0
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		},
+		"create_uid": {
+			"bsonType": "string",
+			"description": "创建人ID",
+			"trim": "both",
+			"forceDefaultValue": {
+				"$env": "uid"
+			}
+		},
+		"create_uname": {
+			"bsonType": "string",
+			"description": "创建人",
+			"trim": "both"
+		},
+		"last_modify_time": {
+			"bsonType": "timestamp",
+			"description": "编辑时间"
+		},
+		"last_modify_uid": {
+			"bsonType": "string",
+			"description": "编辑人ID",
+			"trim": "both"
+		},
+		"last_modify_uname": {
+			"bsonType": "string",
+			"description": "编辑人",
+			"trim": "both"
+		},
+		"delete_time": {
+			"bsonType": "timestamp",
+			"description": "删除时间"
+		},
+		"delete_uid": {
+			"bsonType": "string",
+			"description": "删除人ID",
+			"trim": "both"
+		},
+		"delete_uname": {
+			"bsonType": "string",
+			"description": "删除人",
+			"trim": "both"
+		}
+	}
+}

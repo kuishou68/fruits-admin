@@ -1,0 +1,109 @@
+{
+	"bsonType": "object",
+	"description": "会员积分签到",
+	"permission": {
+		"read": true,
+		"create": false,
+		"update": false,
+		"delete": false,
+		"count": true
+	},
+	"required": ["member_id", "state", "is_delete", "create_uid"],
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID，系统自动生成"
+		},
+		"member_id": {
+			"bsonType": "string",
+			"description": "会员ID",
+			"trim": "both"
+		},
+		"member_uid": {
+			"bsonType": "string",
+			"description": "会员ID",
+			"trim": "both"
+		},
+		"sign_time": {
+			"bsonType": "string",
+			"description": "签到时间",
+			"trim": "both"
+		},
+		"sign_yy": {
+			"bsonType": "string",
+			"description": "",
+			"trim": "both"
+		},
+		"sign_mm": {
+			"bsonType": "string",
+			"description": "",
+			"trim": "both"
+		},
+		"sign_dd": {
+			"bsonType": "string",
+			"description": "",
+			"trim": "both"
+		},
+		"sign_day": {
+			"bsonType": "int",
+			"description": "签到天数"
+		},
+		"sign_week": {
+			"bsonType": "string",
+			"description": "签到星期",
+			"trim": "both"
+		},
+		"sign_week_day": {
+			"bsonType": "int",
+			"description": "第几周"
+		},
+		"sign_integral": {
+			"bsonType": "int",
+			"description": "签到积分"
+		},
+		"sign_addr": {
+			"bsonType": "string",
+			"description": "签到地址",
+			"trim": "both"
+		},
+		"remark": {
+			"bsonType": "string",
+			"description": "备注",
+			"trim": "both"
+		},
+		"state": {
+			"bsonType": "string",
+			"description": "状态",
+			"trim": "both"
+		},
+		"is_delete": {
+			"bsonType": "int",
+			"description": "是否删除 0否 1已删除",
+			"defaultValue": 0
+		},
+		"time": {
+			"bsonType": "string",
+			"description": "时间",
+			"trim": "both"
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		},
+		"create_uid": {
+			"bsonType": "string",
+			"description": "创建人ID",
+			"trim": "both",
+			"forceDefaultValue": {
+				"$env": "uid"
+			}
+		},
+		"create_uname": {
+			"bsonType": "string",
+			"description": "创建人",
+			"trim": "both"
+		}
+	}
+}

@@ -1,0 +1,70 @@
+{
+	"passwordSecret": [{
+		"version": 1,
+		"value": "usemall.unicloud.password.secret"
+	}],
+	"tokenSecret": "usemall.unicloud.token.secret",
+	"tokenExpiresIn": 259200,
+	"tokenExpiresThreshold": 600,
+	"passwordErrorLimit": 6,
+	"passwordErrorRetryTime": 3600,
+	"autoSetInviteCode": false,
+	"forceInviteCode": false,
+	"bindTokenToDevice": false,
+	"app-plus": {
+		"tokenExpiresIn": 2592000,
+		"oauth": {
+			"weixin": {
+				"appid": "weixin appid",
+				"appsecret": "weixin appsecret"
+			}
+		}
+	},
+	"mp-weixin": {
+		"tokenExpiresIn": 259200,
+		"oauth": {
+			"weixin": {
+				"appid": "wx5635f2f0e6d49c80",
+				"appsecret": "2a08bf4ccc5e158234de59a0a300dda4"
+			}
+		},
+		"pay": {
+			"appId": "微信小程序appid",
+			"mchId": "微信支付商户号",
+			"key": "微信支付商户key (API密钥)"
+		},
+		"notify-url": "云函数URL化http地址 + /wxpay"
+	},
+	"mp-alipay": {
+		"tokenExpiresIn": 259200,
+		"oauth": {
+			"alipay": {
+				"appid": "2021002191624295",
+				"privateKey": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsJN28Bx3EKUKWeQDFp0cwN3KxDPhrP8MZ2v8xHBQIyxYf1i2evCBNPKzwYEK3UfZeM5ihji4Rc+R8sSXol0kLbk/3nwmOGXoUPTxmL1WtGXoPhvT956uT16HMp5FcO8eeVJWIq2o2eB05D0QF1SZG5MsLaCyxKFLgRkDemT49ZSKw70HipqvbVqqOh+uP1k0FhfKhJnLV90EvmUlPYk1rZrlO2VU5dftpzkO3plEwdCgsOhs7rev+3xH/WNEKGXNxksrZqeHmzsjSgRVybcyzykkePUJgoNrssuJVErIsd4G0X1TLTFS5u70iILZixUwVwh3HP+g9z/LfSg5jqqXawIDAQAB",
+				"keyType": "RSA2"
+			}
+		},
+		"pay": {
+			"appId": "2021002191624295",
+			"mchId": "2088621957031385",
+			"privateKey": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsJN28Bx3EKUKWeQDFp0cwN3KxDPhrP8MZ2v8xHBQIyxYf1i2evCBNPKzwYEK3UfZeM5ihji4Rc+R8sSXol0kLbk/3nwmOGXoUPTxmL1WtGXoPhvT956uT16HMp5FcO8eeVJWIq2o2eB05D0QF1SZG5MsLaCyxKFLgRkDemT49ZSKw70HipqvbVqqOh+uP1k0FhfKhJnLV90EvmUlPYk1rZrlO2VU5dftpzkO3plEwdCgsOhs7rev+3xH/WNEKGXNxksrZqeHmzsjSgRVybcyzykkePUJgoNrssuJVErIsd4G0X1TLTFS5u70iILZixUwVwh3HP+g9z/LfSg5jqqXawIDAQAB",
+			"alipayPublicKey": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoWV1tsIhY61lIfqu+XidckU1Ha3jR6WKif89yR5PHzA757VPC1kpWIXyPmVUwJFD5i0L48coLqoE59Z5dcE9oxbZi1itbHRD2f464kP8IIHFsPE4ZHsPFOKLZ+ZZewfZOY8efXsX3sxABdVz/X6+Dy7QKIVgFp3owq8t16mAYO/HVA5QXl52/KNln1HQgUIiW86AB3ptuK6mvjmmQZ5F/vfkoi1thzEYJorLofN+N+V2skhjuZgyv9PmOIzvT/ab1ISrCoiIiAwScPtfbrFn311ENFEXNKjGCPjRPbBUR6/hkVITaXwQXvP69rMig+dKctzrGQCJBKJn06EL1/rhNQIDAQAB"
+		},
+		"notify-url": "https://96896dba-9fac-4647-9a58-ee2f3d656528.bspapp.com/alipay"
+	},
+	"service": {
+		"sms": {
+			"name": "应用名称，对应短信模版的name",
+			"codeExpiresIn": 600,
+			"smsKey": "短信密钥key",
+			"smsSecret": "短信密钥secret"
+		},
+		"smscode": {
+			"templateId": "验证码短信模板Id"
+		}
+	},
+	"kd100": {
+		"customer": "快递100 customer",
+		"key": "快递100 授权KEY"
+	}
+}

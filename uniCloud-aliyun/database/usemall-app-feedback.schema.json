@@ -1,0 +1,80 @@
+{
+	"bsonType": "object",
+	"description": "意见反馈",
+	"permission": {
+		"read": true,
+		"create": true,
+		"update": false,
+		"delete": false,
+		"count": true
+	},
+	"required": ["title", "create_uid"],
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID，系统自动生成"
+		},
+		"type_id": {
+			"bsonType": "string",
+			"description": "类型ID",
+			"foreignKey": "usemall-app-feedback-type._id"
+		},
+		"type_name": {
+			"bsonType": "string",
+			"description": "类型名称",
+			"trim": "both"
+		},
+		"title": {
+			"bsonType": "string",
+			"description": "标题",
+			"trim": "both"
+		},
+		"content": {
+			"bsonType": "string",
+			"description": "反馈内容",
+			"trim": "both"
+		},
+		"imgs": {
+			"bsonType": "array",
+			"description": "反馈截图"
+		},
+		"contact_way": {
+			"bsonType": "string",
+			"description": "联系方式",
+			"trim": "both"
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		},
+		"create_uid": {
+			"bsonType": "string",
+			"description": "创建人ID",
+			"trim": "both",
+			"forceDefaultValue": {
+				"$env": "uid"
+			}
+		},
+		"create_uname": {
+			"bsonType": "string",
+			"description": "创建人",
+			"trim": "both"
+		},
+		"last_modify_time": {
+			"bsonType": "timestamp",
+			"description": "编辑时间"
+		},
+		"last_modify_uid": {
+			"bsonType": "string",
+			"description": "编辑人ID",
+			"trim": "both"
+		},
+		"last_modify_uname": {
+			"bsonType": "string",
+			"description": "编辑人",
+			"trim": "both"
+		}
+	}
+}

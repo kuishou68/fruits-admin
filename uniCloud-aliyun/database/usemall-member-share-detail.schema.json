@@ -1,0 +1,103 @@
+{
+	"bsonType": "object",
+	"description": "会员分享明细表",
+	"permission": {
+		"read": true,
+		"create": false,
+		"update": false,
+		"delete": false,
+		"count": true
+	},
+	"required": ["share_id", "member_id", "integral", "is_delete", "create_uid"],
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID，系统自动生成"
+		},
+		"share_id": {
+			"bsonType": "int",
+			"description": "分享ID"
+		},
+		"member_id": {
+			"bsonType": "int",
+			"description": "用户ID"
+		},
+		"member_guid": {
+			"bsonType": "string",
+			"description": "",
+			"trim": "both"
+		},
+		"member_name": {
+			"bsonType": "string",
+			"description": "用户名称",
+			"trim": "both"
+		},
+		"member_headimg": {
+			"bsonType": "string",
+			"description": "用户头像",
+			"trim": "both"
+		},
+		"open_id": {
+			"bsonType": "string",
+			"description": "第三方openid",
+			"trim": "both"
+		},
+		"source_mid": {
+			"bsonType": "int",
+			"description": "来源会员ID"
+		},
+		"source_mguid": {
+			"bsonType": "string",
+			"description": "",
+			"trim": "both"
+		},
+		"source_mname": {
+			"bsonType": "string",
+			"description": "来源会员名称",
+			"trim": "both"
+		},
+		"source_mheadimg": {
+			"bsonType": "string",
+			"description": "来源会员头像",
+			"trim": "both"
+		},
+		"source_mopen_id": {
+			"bsonType": "string",
+			"description": "来源会员openid",
+			"trim": "both"
+		},
+		"integral": {
+			"bsonType": "int",
+			"description": "分享获取总积分"
+		},
+		"remark": {
+			"bsonType": "string",
+			"description": "备注",
+			"trim": "both"
+		},
+		"is_delete": {
+			"bsonType": "int",
+			"description": "是否删除 0否 1已删除",
+			"defaultValue": 0
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		},
+		"create_uid": {
+			"bsonType": "string",
+			"description": "创建人ID",
+			"trim": "both",
+			"forceDefaultValue": {
+				"$env": "uid"
+			}
+		},
+		"create_uname": {
+			"bsonType": "string",
+			"description": "创建人",
+			"trim": "both"
+		}
+	}
+}

@@ -1,0 +1,117 @@
+{
+	"bsonType": "object",
+	"description": "分销",
+	"permission": {
+		"read": true,
+		"create": true,
+		"update": true,
+		"delete": false,
+		"count": true
+	},
+	"required": ["fxs_uid", "fxs_profit_amount", "fxs_unprofit_amount", "fxs_cashout_amount", "fxs_unsettled_amount",
+		"fxs_order_cnt", "fxs_member_cnt", "state", "version", "is_delete", "create_uid"
+	],
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID，系统自动生成"
+		},
+		"fxs_uid": {
+			"bsonType": "string",
+			"description": "分销商UID",
+			"trim": "both"
+		},
+		"fxs_member_id": {
+			"bsonType": "string",
+			"description": "会员ID",
+			"foreignKey": "usemall-member._id"
+		},
+		"fxs_member_openid": {
+			"bsonType": "string",
+			"description": "会员openid",
+			"trim": "both"
+		},
+		"fxs_profit_amount": {
+			"bsonType": "int",
+			"description": "分销累计收益金额"
+		},
+		"fxs_unprofit_amount": {
+			"bsonType": "int",
+			"description": "待审核佣金"
+		},
+		"fxs_cashout_amount": {
+			"bsonType": "int",
+			"description": "分销可提现收益金额"
+		},
+		"fxs_unsettled_amount": {
+			"bsonType": "int",
+			"description": "分销未结算金额"
+		},
+		"fxs_order_cnt": {
+			"bsonType": "int",
+			"description": "分销订单数量"
+		},
+		"fxs_member_cnt": {
+			"bsonType": "int",
+			"description": "成员数量"
+		},
+		"fxs_desc": {
+			"bsonType": "string",
+			"description": "描述",
+			"trim": "both"
+		},
+		"remark": {
+			"bsonType": "string",
+			"description": "备注",
+			"trim": "both"
+		},
+		"state": {
+			"bsonType": "string",
+			"description": "状态 禁用|启用",
+			"trim": "both"
+		},
+		"version": {
+			"bsonType": "int",
+			"description": "数据版本",
+			"defaultValue": 1
+		},
+		"is_delete": {
+			"bsonType": "int",
+			"description": "是否删除 0否 1已删除",
+			"defaultValue": 0
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		},
+		"create_uid": {
+			"bsonType": "string",
+			"description": "创建人ID",
+			"trim": "both",
+			"forceDefaultValue": {
+				"$env": "uid"
+			}
+		},
+		"create_uname": {
+			"bsonType": "string",
+			"description": "创建人",
+			"trim": "both"
+		},
+		"last_modify_time": {
+			"bsonType": "timestamp",
+			"description": "编辑时间"
+		},
+		"last_modify_uid": {
+			"bsonType": "string",
+			"description": "编辑人ID",
+			"trim": "both"
+		},
+		"last_modify_uname": {
+			"bsonType": "string",
+			"description": "编辑人",
+			"trim": "both"
+		}
+	}
+}

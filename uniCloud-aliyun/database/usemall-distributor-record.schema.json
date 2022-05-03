@@ -1,0 +1,115 @@
+{
+	"bsonType": "object",
+	"description": "分销记录",
+	"permission": {
+		"read": true,
+		"create": false,
+		"update": false,
+		"delete": false,
+		"count": true
+	},
+	"required": ["fxs_uid", "profit_amount", "state", "version", "is_delete", "create_uid"],
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID，系统自动生成"
+		},
+		"fxs_uid": {
+			"bsonType": "string",
+			"description": "分销商UID",
+			"trim": "both"
+		},
+		"profit_amount": {
+			"bsonType": "int",
+			"description": "分销收益金额"
+		},
+		"member_guid": {
+			"bsonType": "string",
+			"description": "",
+			"trim": "both"
+		},
+		"member_openid": {
+			"bsonType": "string",
+			"description": "",
+			"trim": "both"
+		},
+		"member_name": {
+			"bsonType": "string",
+			"description": "",
+			"trim": "both"
+		},
+		"member_headimg": {
+			"bsonType": "string",
+			"description": "",
+			"trim": "both"
+		},
+		"order_id": {
+			"bsonType": "string",
+			"description": "订单ID",
+			"trim": "both"
+		},
+		"source_desc": {
+			"bsonType": "string",
+			"description": "来源描述",
+			"trim": "both"
+		},
+		"source_type": {
+			"bsonType": "string",
+			"description": "来源类型 下单",
+			"trim": "both"
+		},
+		"remark": {
+			"bsonType": "string",
+			"description": "备注",
+			"trim": "both"
+		},
+		"state": {
+			"bsonType": "string",
+			"description": "状态 未结算|已结算",
+			"trim": "both"
+		},
+		"version": {
+			"bsonType": "int",
+			"description": "数据版本",
+			"defaultValue": 1
+		},
+		"is_delete": {
+			"bsonType": "int",
+			"description": "是否删除 0否 1已删除",
+			"defaultValue": 0
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		},
+		"create_uid": {
+			"bsonType": "string",
+			"description": "创建人ID",
+			"trim": "both",
+			"forceDefaultValue": {
+				"$env": "uid"
+			}
+		},
+		"create_uname": {
+			"bsonType": "string",
+			"description": "创建人",
+			"trim": "both"
+		},
+		"last_modify_time": {
+			"bsonType": "timestamp",
+			"description": "编辑时间"
+		},
+		"last_modify_uid": {
+			"bsonType": "string",
+			"description": "编辑人ID",
+			"trim": "both"
+		},
+		"last_modify_uname": {
+			"bsonType": "string",
+			"description": "编辑人",
+			"trim": "both"
+		}
+	}
+}

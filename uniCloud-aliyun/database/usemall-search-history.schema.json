@@ -1,0 +1,65 @@
+{
+	"bsonType": "object",
+	"description": "历史搜索表",
+	"permission": {
+		"read": true,
+		"create": true,
+		"update": "doc.create_uid == auth.uid",
+		"delete": "doc.create_uid == auth.uid",
+		"count": "doc.create_uid == auth.uid"
+	},
+	"required": ["search_cnt", "is_delete", "create_uid"],
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID，系统自动生成"
+		},
+		"keyword": {
+			"bsonType": "string",
+			"description": "关键字",
+			"trim": "both"
+		},
+		"search_cnt": {
+			"bsonType": "int",
+			"description": "搜索次数"
+		},
+		"is_delete": {
+			"bsonType": "int",
+			"description": "是否删除 0否 1已删除",
+			"defaultValue": 0
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		},
+		"create_uid": {
+			"bsonType": "string",
+			"description": "创建人ID",
+			"trim": "both",
+			"forceDefaultValue": {
+				"$env": "uid"
+			}
+		},
+		"create_uname": {
+			"bsonType": "string",
+			"description": "创建人",
+			"trim": "both"
+		},
+		"last_modify_time": {
+			"bsonType": "timestamp",
+			"description": "编辑时间"
+		},
+		"last_modify_uid": {
+			"bsonType": "string",
+			"description": "编辑人ID",
+			"trim": "both"
+		},
+		"last_modify_uname": {
+			"bsonType": "string",
+			"description": "编辑人",
+			"trim": "both"
+		}
+	}
+}

@@ -1,0 +1,102 @@
+{
+	"bsonType": "object",
+	"description": "会员分享表",
+	"permission": {
+		"read": true,
+		"create": false,
+		"update": false,
+		"delete": false,
+		"count": true
+	},
+	"required": ["goods_id", "goods_sku", "member_id", "integral", "user_cnt", "visit_cnt", "is_delete", "create_uid"],
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID，系统自动生成"
+		},
+		"goods_id": {
+			"bsonType": "int",
+			"description": "水果ID"
+		},
+		"goods_sku": {
+			"bsonType": "string",
+			"description": "水果SKU",
+			"trim": "both"
+		},
+		"member_id": {
+			"bsonType": "int",
+			"description": "用户ID"
+		},
+		"member_guid": {
+			"bsonType": "string",
+			"description": "",
+			"trim": "both"
+		},
+		"member_openid": {
+			"bsonType": "string",
+			"description": "",
+			"trim": "both"
+		},
+		"member_name": {
+			"bsonType": "string",
+			"description": "用户名称",
+			"trim": "both"
+		},
+		"member_headimg": {
+			"bsonType": "string",
+			"description": "用户头像",
+			"trim": "both"
+		},
+		"open_id": {
+			"bsonType": "string",
+			"description": "第三方openid",
+			"trim": "both"
+		},
+		"integral": {
+			"bsonType": "int",
+			"description": "分享获取总积分"
+		},
+		"user_cnt": {
+			"bsonType": "int",
+			"description": "通过分享入口进入的用户数"
+		},
+		"visit_cnt": {
+			"bsonType": "int",
+			"description": "访问数"
+		},
+		"remark": {
+			"bsonType": "string",
+			"description": "备注",
+			"trim": "both"
+		},
+		"state": {
+			"bsonType": "string",
+			"description": "状态 未分享|已分享",
+			"trim": "both"
+		},
+		"is_delete": {
+			"bsonType": "int",
+			"description": "是否删除 0否 1已删除",
+			"defaultValue": 0
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		},
+		"create_uid": {
+			"bsonType": "string",
+			"description": "创建人ID",
+			"trim": "both",
+			"forceDefaultValue": {
+				"$env": "uid"
+			}
+		},
+		"create_uname": {
+			"bsonType": "string",
+			"description": "创建人",
+			"trim": "both"
+		}
+	}
+}

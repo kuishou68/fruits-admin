@@ -1,0 +1,163 @@
+{
+	"bsonType": "object",
+	"description": "会员收货地址表",
+	"permission": {
+		"read": true,
+		"create": true,
+		"update": "doc.create_uid == auth.uid",
+		"delete": "doc.create_uid == auth.uid",
+		"count": "doc.create_uid == auth.uid"
+	},
+	"required": ["consignee", "mobile", "addr_source", "is_default", "version", "is_delete"],
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID，系统自动生成"
+		},
+		"member_guid": {
+			"bsonType": "string",
+			"description": "会员GUID",
+			"trim": "both"
+		},
+		"consignee": {
+			"bsonType": "string",
+			"description": "收货人",
+			"trim": "both"
+		},
+		"province_code": {
+			"bsonType": "string",
+			"description": "",
+			"trim": "both"
+		},
+		"province_name": {
+			"bsonType": "string",
+			"description": "省份",
+			"trim": "both"
+		},
+		"city_code": {
+			"bsonType": "string",
+			"description": "",
+			"trim": "both"
+		},
+		"city_name": {
+			"bsonType": "string",
+			"description": "城市",
+			"trim": "both"
+		},
+		"area_code": {
+			"bsonType": "string",
+			"description": "",
+			"trim": "both"
+		},
+		"area_name": {
+			"bsonType": "string",
+			"description": "区域",
+			"trim": "both"
+		},
+		"addr_detail": {
+			"bsonType": "string",
+			"description": "详细地址",
+			"trim": "both"
+		},
+		"address": {
+			"bsonType": "string",
+			"description": "收货地址",
+			"trim": "both"
+		},
+		"mobile": {
+			"bsonType": "string",
+			"description": "",
+			"trim": "both"
+		},
+		"tel": {
+			"bsonType": "string",
+			"description": "",
+			"trim": "both"
+		},
+		"longitude": {
+			"bsonType": "string",
+			"description": ""
+		},
+		"latitude": {
+			"bsonType": "string",
+			"description": ""
+		},
+		"addr_source": {
+			"bsonType": "string",
+			"description": "地址来源 导入|录入",
+			"trim": "both"
+		},
+		"is_default": {
+			"bsonType": "string",
+			"description": "是否默认 否|是",
+			"trim": "both"
+		},
+		"remark": {
+			"bsonType": "string",
+			"description": "备注 家|公司",
+			"trim": "both"
+		},
+		"state": {
+			"bsonType": "string",
+			"description": "状态",
+			"trim": "both"
+		},
+		"version": {
+			"bsonType": "int",
+			"description": "数据版本",
+			"defaultValue": 1
+		},
+		"is_delete": {
+			"bsonType": "int",
+			"description": "是否删除 0否 1已删除",
+			"defaultValue": 0
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		},
+		"create_uid": {
+			"bsonType": "string",
+			"description": "创建人ID",
+			"trim": "both",
+			"forceDefaultValue": {
+				"$env": "uid"
+			}
+		},
+		"create_uname": {
+			"bsonType": "string",
+			"description": "创建人",
+			"trim": "both"
+		},
+		"last_modify_time": {
+			"bsonType": "timestamp",
+			"description": "编辑时间"
+		},
+		"last_modify_uid": {
+			"bsonType": "string",
+			"description": "编辑人ID",
+			"trim": "both"
+		},
+		"last_modify_uname": {
+			"bsonType": "string",
+			"description": "编辑人",
+			"trim": "both"
+		},
+		"delete_time": {
+			"bsonType": "timestamp",
+			"description": "删除时间"
+		},
+		"delete_uid": {
+			"bsonType": "string",
+			"description": "删除人ID",
+			"trim": "both"
+		},
+		"delete_uname": {
+			"bsonType": "string",
+			"description": "删除人",
+			"trim": "both"
+		}
+	}
+}

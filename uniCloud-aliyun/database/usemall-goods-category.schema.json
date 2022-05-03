@@ -1,0 +1,116 @@
+{
+	"bsonType": "object",
+	"description": "水果分类表",
+	"permission": {
+		"read": true,
+		"create": false,
+		"update": false,
+		"delete": false,
+		"count": true
+	},
+	"required": ["name", "sort", "version", "state", "is_delete", "create_uid"],
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID，系统自动生成"
+		},
+		"pid": {
+			"bsonType": "string",
+			"description": "上级ID",
+			"parentKey": "_id"
+		},
+		"name": {
+			"bsonType": "string",
+			"description": "分类名称[unique]",
+			"trim": "both"
+		},
+		"img": {
+			"bsonType": "string",
+			"description": "分类图片",
+			"trim": "both"
+		},
+		"level": {
+			"bsonType": "int",
+			"description": "当前层级[unique]"
+		},
+		"tid": {
+			"bsonType": "int",
+			"description": "类型ID"
+		},
+		"tname": {
+			"bsonType": "string",
+			"description": "类型名称",
+			"trim": "both"
+		},
+		"ratio": {
+			"bsonType": "double",
+			"description": "分佣比例"
+		},
+		"sort": {
+			"bsonType": "int",
+			"description": "排序"
+		},
+		"version": {
+			"bsonType": "int",
+			"description": "数据版本",
+			"defaultValue": 1
+		},
+		"state": {
+			"bsonType": "string",
+			"description": "状态 启用|禁用",
+			"trim": "both"
+		},
+		"is_delete": {
+			"bsonType": "int",
+			"description": "是否删除 0否 1已删除",
+			"defaultValue": 0
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		},
+		"create_uid": {
+			"bsonType": "string",
+			"description": "创建人ID",
+			"trim": "both",
+			"forceDefaultValue": {
+				"$env": "uid"
+			}
+		},
+		"create_uname": {
+			"bsonType": "string",
+			"description": "创建人",
+			"trim": "both"
+		},
+		"last_modify_time": {
+			"bsonType": "timestamp",
+			"description": "编辑时间"
+		},
+		"last_modify_uid": {
+			"bsonType": "string",
+			"description": "编辑人ID",
+			"trim": "both"
+		},
+		"last_modify_uname": {
+			"bsonType": "string",
+			"description": "编辑人",
+			"trim": "both"
+		},
+		"delete_time": {
+			"bsonType": "timestamp",
+			"description": "删除时间"
+		},
+		"delete_uid": {
+			"bsonType": "string",
+			"description": "删除人ID",
+			"trim": "both"
+		},
+		"delete_uname": {
+			"bsonType": "string",
+			"description": "删除人",
+			"trim": "both"
+		}
+	}
+}

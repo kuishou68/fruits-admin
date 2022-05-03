@@ -1,0 +1,107 @@
+{
+	"bsonType": "object",
+	"description": "分销提现",
+	"permission": {
+		"read": true,
+		"create": true,
+		"update": true,
+		"delete": false,
+		"count": true
+	},
+	"required": ["fxs_uid", "fxs_cashout_amount", "fxs_cashout_way_id", "version", "is_delete", "create_uid"],
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID，系统自动生成"
+		},
+		"fxs_uid": {
+			"bsonType": "string",
+			"description": "分销商UID",
+			"trim": "both"
+		},
+		"fxs_cashout_amount": {
+			"bsonType": "int",
+			"description": "提现金额"
+		},
+		"fxs_cashout_way_id": {
+			"bsonType": "int",
+			"description": "提现方式ID"
+		},
+		"fxs_cashout_way": {
+			"bsonType": "string",
+			"description": "提现方式",
+			"trim": "both"
+		},
+		"fxs_cashout_desc": {
+			"bsonType": "string",
+			"description": "提现描述",
+			"trim": "both"
+		},
+		"fxs_cashout_fail": {
+			"bsonType": "string",
+			"description": "提现失败原因",
+			"trim": "both"
+		},
+		"ip": {
+			"bsonType": "string",
+			"description": "操作ip",
+			"trim": "both",
+			"forceDefaultValue": {
+				"$env": "clientIP"
+			}
+		},
+		"remark": {
+			"bsonType": "string",
+			"description": "",
+			"trim": "both"
+		},
+		"state": {
+			"bsonType": "string",
+			"description": "状态 待审核|已提现|提现失败",
+			"trim": "both"
+		},
+		"version": {
+			"bsonType": "int",
+			"description": "数据版本",
+			"defaultValue": 1
+		},
+		"is_delete": {
+			"bsonType": "int",
+			"description": "是否删除 0否 1已删除",
+			"defaultValue": 0
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		},
+		"create_uid": {
+			"bsonType": "string",
+			"description": "创建人ID",
+			"trim": "both",
+			"forceDefaultValue": {
+				"$env": "uid"
+			}
+		},
+		"create_uname": {
+			"bsonType": "string",
+			"description": "创建人",
+			"trim": "both"
+		},
+		"last_modify_time": {
+			"bsonType": "timestamp",
+			"description": "编辑时间"
+		},
+		"last_modify_uid": {
+			"bsonType": "string",
+			"description": "编辑人ID",
+			"trim": "both"
+		},
+		"last_modify_uname": {
+			"bsonType": "string",
+			"description": "编辑人",
+			"trim": "both"
+		}
+	}
+}

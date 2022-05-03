@@ -1,0 +1,241 @@
+{
+	"bsonType": "object",
+	"description": "水果表",
+	"permission": {
+		"read": true,
+		"create": false,
+		"update": false,
+		"delete": false,
+		"count": true
+	},
+	"required": ["name", "cid", "price", "stock_num", "sort", "state", "version", "is_delete", "create_uid"],
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID，系统自动生成"
+		},
+		"name": {
+			"bsonType": "string",
+			"description": "水果名称",
+			"trim": "both"
+		},
+		"name_pw": {
+			"bsonType": "string",
+			"description": "推广词",
+			"trim": "both"
+		},
+		"cid": {
+			"bsonType": "int",
+			"description": "分类ID",
+			"foreignKey": "usemall-goods-category._id"
+		},
+		"cids": {
+			"bsonType": "array",
+			"description": "分类ID数组",
+			"trim": "both"
+		},
+		"bid": {
+			"bsonType": "int",
+			"description": "品牌ID"
+		},
+		"price": {
+			"bsonType": "int",
+			"description": "商城价，单位分"
+		},
+		"market_price": {
+			"bsonType": "int",
+			"description": "市场价，单位分"
+		},
+		"stock_num": {
+			"bsonType": "int",
+			"description": "库存"
+		},
+		"stock_wh_num": {
+			"bsonType": "int",
+			"description": "入库库存"
+		},
+		"sold_out_time": {
+			"bsonType": "timestamp",
+			"description": "下架时间"
+		},
+		"skus": {
+			"bsonType": "array",
+			"description": "相关SKU规格集合"
+		},
+		"freight_tpl": {
+			"bsonType": "string",
+			"description": "运费模板",
+			"trim": "both"
+		},
+		"img": {
+			"bsonType": "string",
+			"description": "主图",
+			"trim": "both"
+		},
+		"imgs": {
+			"bsonType": "array",
+			"description": "图片集合"
+		},
+		"video": {
+			"bsonType": "object",
+			"description": "视频"
+		},
+		"sale_cnt": {
+			"bsonType": "int",
+			"description": "已售数"
+		},
+		"visit_cnt": {
+			"bsonType": "int",
+			"description": "访问数"
+		},
+		"collect_cnt": {
+			"bsonType": "int",
+			"description": "收藏数"
+		},
+		"share_cnt": {
+			"bsonType": "int",
+			"description": "分享数"
+		},
+		"sale": {
+			"bsonType": "int",
+			"description": "显示销售 0隐藏 1显示",
+			"defaultValue": "0"
+		},
+		"visit": {
+			"bsonType": "int",
+			"description": "显示访问数 0隐藏 1显示",
+			"defaultValue": "0"
+		},
+		"collect": {
+			"bsonType": "int",
+			"description": "显示收藏数 0隐藏 1显示",
+			"defaultValue": "0"
+		},
+		"share": {
+			"bsonType": "int",
+			"description": "显示分享数 0隐藏 1显示",
+			"defaultValue": "0"
+		},
+		"limit": {
+			"bsonType": "int",
+			"description": "限购量，0为不限购",
+			"defaultValue": "0"
+		},
+		"limited": {
+			"bsonType": "int",
+			"description": "限时精选 0否 1是",
+			"defaultValue": "0"
+		},
+		"hot": {
+			"bsonType": "int",
+			"description": "热门推荐 0否 1是",
+			"defaultValue": "0"
+		},
+		"tags": {
+			"bsonType": "array",
+			"description": "标签"
+		},
+		"is_fxs": {
+			"bsonType": "string",
+			"description": "分销水果"
+		},
+		"rebate_ratio": {
+			"bsonType": "int",
+			"description": "返利比例"
+		},
+		"is_vip": {
+			"bsonType": "string",
+			"description": "VIP"
+		},
+		"vip_price": {
+			"bsonType": "int",
+			"description": "VIP价"
+		},
+		"share_title": {
+			"bsonType": "string",
+			"description": "分享标题",
+			"trim": "both"
+		},
+		"share_img": {
+			"bsonType": "string",
+			"description": "分享图标",
+			"trim": "both"
+		},
+		"share_desc": {
+			"bsonType": "string",
+			"description": "分享描述",
+			"trim": "both"
+		},
+		"sort": {
+			"bsonType": "int",
+			"description": "排序"
+		},
+		"remark": {
+			"bsonType": "string",
+			"description": "备注",
+			"trim": "both"
+		},
+		"state": {
+			"bsonType": "string",
+			"description": "状态 待审核|销售中|已下架",
+			"trim": "both"
+		},
+		"version": {
+			"bsonType": "int",
+			"description": "数据版本",
+			"defaultValue": 1
+		},
+		"is_delete": {
+			"bsonType": "int",
+			"description": "是否删除 0否 1已删除",
+			"defaultValue": 0
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		},
+		"create_uid": {
+			"bsonType": "string",
+			"description": "创建人ID",
+			"trim": "both",
+			"forceDefaultValue": {
+				"$env": "uid"
+			}
+		},
+		"create_uname": {
+			"bsonType": "string",
+			"description": "创建人",
+			"trim": "both"
+		},
+		"last_modify_time": {
+			"bsonType": "timestamp",
+			"description": "编辑时间"
+		},
+		"last_modify_uid": {
+			"bsonType": "string",
+			"description": "编辑人ID",
+			"trim": "both"
+		},
+		"last_modify_uname": {
+			"bsonType": "string",
+			"description": "编辑人",
+			"trim": "both"
+		},
+		"delete_time": {
+			"bsonType": "timestamp",
+			"description": "删除时间"
+		},
+		"delete_uid": {
+			"bsonType": "string",
+			"description": "删除人ID",
+			"trim": "both"
+		},
+		"delete_uname": {
+			"bsonType": "string",
+			"description": "删除人",
+			"trim": "both"
+		}
+	}
+}

@@ -1,0 +1,90 @@
+{
+	"bsonType": "object",
+	"description": "积分明细记录",
+	"permission": {
+		"read": true,
+		"create": false,
+		"update": false,
+		"delete": false,
+		"count": true
+	},
+	"required": ["member_id", "integral", "state", "is_delete", "create_uid"],
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID，系统自动生成"
+		},
+		"member_id": {
+			"bsonType": "string",
+			"description": "会员ID",
+			"trim": "both"
+		},
+		"member_uid": {
+			"bsonType": "string",
+			"description": "会员ID",
+			"trim": "both"
+		},
+		"integral": {
+			"bsonType": "int",
+			"description": "总积分"
+		},
+		"type": {
+			"bsonType": "string",
+			"description": "积分类型 收入|支出",
+			"trim": "both"
+		},
+		"source": {
+			"bsonType": "string",
+			"description": "积分来源 分享|下单|签到|好评|注册会员|绑定手机号|完善个人信息",
+			"trim": "both"
+		},
+		"order_id": {
+			"bsonType": "string",
+			"description": "订单ID",
+			"trim": "both"
+		},
+		"goods_id": {
+			"bsonType": "string",
+			"description": "水果ID"
+		},
+		"remark": {
+			"bsonType": "string",
+			"description": "备注",
+			"trim": "both"
+		},
+		"state": {
+			"bsonType": "string",
+			"description": "状态",
+			"trim": "both"
+		},
+		"is_delete": {
+			"bsonType": "int",
+			"description": "是否删除 0否 1已删除",
+			"defaultValue": 0
+		},
+		"time": {
+			"bsonType": "string",
+			"description": "时间",
+			"trim": "both"
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		},
+		"create_uid": {
+			"bsonType": "string",
+			"description": "创建人ID",
+			"trim": "both",
+			"forceDefaultValue": {
+				"$env": "uid"
+			}
+		},
+		"create_uname": {
+			"bsonType": "string",
+			"description": "创建人",
+			"trim": "both"
+		}
+	}
+}

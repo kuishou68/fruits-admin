@@ -1,0 +1,101 @@
+{
+	"bsonType": "object",
+	"description": "订单支付表",
+	"permission": {
+		"read": true,
+		"create": false,
+		"update": false,
+		"delete": false,
+		"count": true
+	},
+	"required": ["order_id", "version", "is_delete", "create_uid"],
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID，系统自动生成"
+		},
+		"order_id": {
+			"bsonType": "string",
+			"description": "订单编号",
+			"trim": "both"
+		},
+		"pay_openid": {
+			"bsonType": "string",
+			"description": "支付者 openid",
+			"trim": "both"
+		},
+		"pay_way": {
+			"bsonType": "string",
+			"description": "支付方式 微信支付|余额支付|支付宝|网银|其他",
+			"trim": "both"
+		},
+		"pay_original": {
+			"bsonType": "string",
+			"description": "原始支付方式 微信支付|支付宝支付",
+			"trim": "both"
+		},
+		"pay_trade_type": {
+			"bsonType": "string",
+			"description": "JSAPI，NATIVE，APP，H5支付固定传 MWEB",
+			"trim": "both"
+		},
+		"pay_preid": {
+			"bsonType": "string",
+			"description": "预支付编号",
+			"trim": "both"
+		},
+		"pay_res": {
+			"bsonType": "string",
+			"description": "支付响应数据",
+			"trim": "both"
+		},
+		"pay_no": {
+			"bsonType": "string",
+			"description": "支付编号",
+			"trim": "both"
+		},
+		"pay_time": {
+			"bsonType": "timestamp",
+			"description": ""
+		},
+		"pay_notify": {
+			"bsonType": "string",
+			"description": "支付回调数据",
+			"trim": "both"
+		},
+		"pay_state": {
+			"bsonType": "string",
+			"description": "支付状态 待付款|已付款",
+			"trim": "both"
+		},
+		"version": {
+			"bsonType": "int",
+			"description": "数据版本",
+			"defaultValue": 1
+		},
+		"is_delete": {
+			"bsonType": "int",
+			"description": "是否删除 0否 1已删除",
+			"defaultValue": 0
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		},
+		"create_uid": {
+			"bsonType": "string",
+			"description": "创建人ID",
+			"trim": "both",
+			"forceDefaultValue": {
+				"$env": "uid"
+			}
+		},
+		"create_uname": {
+			"bsonType": "string",
+			"description": "创建人",
+			"trim": "both"
+		}
+	}
+}

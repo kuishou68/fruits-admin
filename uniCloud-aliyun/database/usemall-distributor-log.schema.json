@@ -1,0 +1,72 @@
+{
+	"bsonType": "object",
+	"description": "分销操作日志",
+	"permission": {
+		"read": true,
+		"create": false,
+		"update": false,
+		"delete": false,
+		"count": true
+	},
+	"required": ["fxs_uid", "version", "is_delete", "create_uid"],
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID，系统自动生成"
+		},
+		"fxs_uid": {
+			"bsonType": "string",
+			"description": "分销商UID",
+			"trim": "both"
+		},
+		"oper_content": {
+			"bsonType": "string",
+			"description": "操作内容",
+			"trim": "both"
+		},
+		"oper_type": {
+			"bsonType": "string",
+			"description": "操作类型",
+			"trim": "both"
+		},
+		"oper_ip": {
+			"bsonType": "string",
+			"description": "操作人ip",
+			"trim": "both"
+		},
+		"remark": {
+			"bsonType": "string",
+			"description": "",
+			"trim": "both"
+		},
+		"version": {
+			"bsonType": "int",
+			"description": "数据版本",
+			"defaultValue": 1
+		},
+		"is_delete": {
+			"bsonType": "int",
+			"description": "是否删除 0否 1已删除",
+			"defaultValue": 0
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		},
+		"create_uid": {
+			"bsonType": "string",
+			"description": "创建人ID",
+			"trim": "both",
+			"forceDefaultValue": {
+				"$env": "uid"
+			}
+		},
+		"create_uname": {
+			"bsonType": "string",
+			"description": "创建人",
+			"trim": "both"
+		}
+	}
+}

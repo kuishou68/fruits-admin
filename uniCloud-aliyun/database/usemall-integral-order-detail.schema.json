@@ -1,0 +1,108 @@
+{
+	"bsonType": "object",
+	"description": "积分订单明细",
+	"permission": {
+		"read": true,
+		"create": false,
+		"update": false,
+		"delete": false,
+		"count": true
+	},
+	"required": ["order_id", "goods_id", "goods_num", "goods_price", "goods_market_price", "version", "is_delete",
+		"create_uid"
+	],
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID，系统自动生成"
+		},
+		"order_id": {
+			"bsonType": "string",
+			"description": "订单编号",
+			"trim": "both"
+		},
+		"goods_id": {
+			"bsonType": "string",
+			"description": "水果ID"
+		},
+		"goods_name": {
+			"bsonType": "string",
+			"description": "水果名称",
+			"trim": "both"
+		},
+		"goods_name_pw": {
+			"bsonType": "string",
+			"description": "水果推广词",
+			"trim": "both"
+		},
+		"goods_img": {
+			"bsonType": "string",
+			"description": "水果图片",
+			"trim": "both"
+		},
+		"goods_num": {
+			"bsonType": "int",
+			"description": "水果数量"
+		},
+		"goods_integral": {
+			"bsonType": "int",
+			"description": "水果积分"
+		},
+		"goods_price": {
+			"bsonType": "int",
+			"description": "水果价格"
+		},
+		"goods_market_price": {
+			"bsonType": "int",
+			"description": "水果市场价"
+		},
+		"goods_type": {
+			"bsonType": "string",
+			"description": "水果类型",
+			"trim": "both"
+		},
+		"version": {
+			"bsonType": "int",
+			"description": "数据版本",
+			"defaultValue": 1
+		},
+		"is_delete": {
+			"bsonType": "int",
+			"description": "是否删除 0否 1已删除",
+			"defaultValue": 0
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		},
+		"create_uid": {
+			"bsonType": "string",
+			"description": "创建人ID",
+			"trim": "both",
+			"forceDefaultValue": {
+				"$env": "uid"
+			}
+		},
+		"create_uname": {
+			"bsonType": "string",
+			"description": "创建人",
+			"trim": "both"
+		},
+		"last_modify_time": {
+			"bsonType": "timestamp",
+			"description": "编辑时间"
+		},
+		"last_modify_uid": {
+			"bsonType": "string",
+			"description": "编辑人ID",
+			"trim": "both"
+		},
+		"last_modify_uname": {
+			"bsonType": "string",
+			"description": "编辑人",
+			"trim": "both"
+		}
+	}
+}
